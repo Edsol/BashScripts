@@ -26,7 +26,7 @@ function turn-off-screen-in-wayland()
         echo "Turning monitors back on..."
         _trigger-monitors-on-in-gnome-wayland
 
-    elif [[ $XDG_SESSION_DESKTOP == "plasma" ]]; then
+    elif [[ $XDG_SESSION_DESKTOP == "plasma" || $XDG_SESSION_DESKTOP == "KDE" ]]; then
         _trigger-monitors-off-in-kde-wayland
     else
         echo "ERROR: Unsupported Wayland Desktop Environment: $XDG_SESSION_DESKTOP"
